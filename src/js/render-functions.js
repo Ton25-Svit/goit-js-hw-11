@@ -1,4 +1,4 @@
-import { getData, searchImageForm } from './pixebay-api.js';
+import { getData, searchImageForm } from './pixabay-api.js';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 

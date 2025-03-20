@@ -1,4 +1,4 @@
-import { getData, searchImageForm } from './js/pixebay-api'
+import { getData, searchImageForm } from './js/pixabay-api'
 
 
 searchImageForm.addEventListener("submit", event => {
