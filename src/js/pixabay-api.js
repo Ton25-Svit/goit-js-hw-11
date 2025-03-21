@@ -3,7 +3,7 @@ import { getPhotos, gallery } from './render-functions';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-export const searchImageForm = document.querySelector('.searchPhoto');
+export const searchImageForm = document.querySelector('.form');
 
 export function getData(event) {
   const userSearching = searchImageForm.inputText.value.trim();
