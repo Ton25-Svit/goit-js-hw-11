@@ -1,4 +1,3 @@
-import { getData, searchImageForm } from './pixabay-api.js';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
@@ -8,12 +7,9 @@ let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
-export function getPhotos(photos) {
-  gallery.innerHTML = '';
-  let imageBox = '';
-
-  photos.forEach(image => {
-    imageBox += `
+export function renderGalleryList(photos) {
+ 
+  const markup = photos.map(image => `
       <li class="image">
         <a class="gallery-link" href="${image.largeImageURL}">
           <img src="${image.webformatURL}" alt="${image.tags}" class="gallery-image" width="360" height="200">
@@ -25,9 +21,12 @@ export function getPhotos(photos) {
           </div>
           </a>
       </li>
-    `;
-  });
+    `).join('');
 
-  gallery.innerHTML = imageBox;
+  gallery.insertAdjacentHTML('beforeend', markup);
   lightbox.refresh();
+}
+
+export function clearGalleryList() {
+  gallery.innerHTML = "";
 }
